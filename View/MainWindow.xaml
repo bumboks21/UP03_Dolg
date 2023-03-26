@@ -1,0 +1,64 @@
+﻿<Window x:Class="SchoolApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolApplication"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+         Title="СШ по конному спорту: Авторизация" Height="450" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label 
+            FontSize="32"
+            FontFamily="Times New Roman"
+            Foreground="RoyalBlue"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Content="СШ по конному спорту" />
+
+        <Label
+            Grid.Row="1"
+            Margin="10,0,0,0"
+            Content="Введите логин: " />
+
+        <TextBox 
+            Grid.Row="2" 
+            Text="{Binding Login}"
+            Height="32"
+            Margin="10"
+            />
+
+        <Label
+            Grid.Row="3"
+            Margin="10,0,0,0"
+            Content="Введите пароль: " />
+
+        <PasswordBox 
+            Grid.Row="4" 
+            Name="pswPassword"
+            Height="32"
+            Margin="10"
+            />
+
+        <Button
+            Name="btnAuth"
+            Click="btnAuth_Click"
+            Grid.Row="5"
+            Height="32"
+            Width="90"
+            Content="{Binding BtnDesc}"
+            Margin="0,10,10,0"
+            HorizontalAlignment="Right"
+            />
+    </Grid>
+</Window>

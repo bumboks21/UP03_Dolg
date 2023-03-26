@@ -1,0 +1,65 @@
+﻿<Window x:Class="SchoolApplication.View.ApplicationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolApplication.View" xmlns:viewmodel="clr-namespace:SchoolApplication.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:AppVM}"
+        mc:Ignorable="d"
+        MinHeight="300"
+        MinWidth="400"
+        WindowStartupLocation="CenterScreen"
+         Title="СШ по конному спорту" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Name="BtnAddData" 
+                Click="BtnAddData_Click"
+                Content="Добавить" 
+                  Background="RoyalBlue"
+                Width="150" 
+                  FontSize="20"
+                HorizontalAlignment="Center"
+                Height="40" Margin="240,0,0,0" 
+                />
+        <Button Grid.Row="0" Name="BtnEditData"
+                Click="BtnEditData_Click"
+                  Background="RoyalBlue"
+                Content="Редактировать" 
+                Width="150" 
+                Height="40" 
+                  FontSize="20"
+                 HorizontalAlignment="Right" Margin="0,0,20,0"
+                />
+        <Button Grid.Row="0" Name="BtnDelete"
+                Click="BtnDelete_Click"
+                Content="Удалить"
+                  Background="RoyalBlue"
+                FontSize="20"
+                Width="150" 
+                Height="40" HorizontalAlignment="Left" Margin="260,0,0,0" 
+                />
+        <DataGrid Grid.Row="1"
+            IsReadOnly="True"
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding InfoSportsman}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                    Header="Имя спортсмена"
+                    Binding="{Binding Name}"
+                    />
+                    <DataGridTextColumn
+                    Header="Фамилия спортсмена"
+                    Binding="{Binding Surname}" />
+                    <DataGridTextColumn
+                    Header="Возраст спортсмена"
+                    Binding="{Binding Age}" />
+
+                    <DataGridTextColumn
+                    Header="Лошадь закрепленная за спортсменом"
+                    Binding="{Binding HorseName}" />
+                </DataGrid.Columns>
+            </DataGrid>
+    </Grid>
+</Window>
